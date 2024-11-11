@@ -66,8 +66,8 @@ export default function ContactUs({name, event}:Props) {
                 <h1 className='InfoBlockTitle'>Сбор средств</h1>
                 <h2>{name} собирает на &#34;{event}&#34;</h2>
                 {!isConfirmed
-                    ? <ContactForm setIsConfirmed={setIsConfirmed} setMessage={setMessage} />
-                    : <div className='InfoBlockMessage'>{message}</div>
+                    ? <ContactForm setIsConfirmed={setIsConfirmed} setMessage={setMessage} name={name} event={event} />
+                    : <code className='InfoBlockMessage'>{JSON.stringify(message, null, 2)}</code>
                 }
             </StylizedSectionInfoBlock>
         </>
