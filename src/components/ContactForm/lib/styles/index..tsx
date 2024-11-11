@@ -30,6 +30,9 @@ export const ContactFormBlock = styled.form`
 export const FormField = styled.div`
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 0; /* Убирает ограничение на минимальную ширину */
 
     & label {
         margin-bottom: 8px;
@@ -84,6 +87,7 @@ export const FormField = styled.div`
 
 export const SubmitButton = styled(Button)`
     color: #ffffff;
+    padding: 6px 50px;
     text-align: center;
     background: #0663EF;
     border-radius: 8px;
@@ -118,8 +122,16 @@ export const FormList = styled.div`
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 15px;
-    
+    width: 100%;
     &.form-list__btns {
         grid-template-columns: .2fr .2fr;
     }
-`
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr; /* Один столбец на мобильных устройствах */
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        grid-template-columns: 1fr 1fr; /* Два столбца на планшетах */
+    }
+`;
