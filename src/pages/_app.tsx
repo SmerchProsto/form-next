@@ -8,11 +8,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
     return (
         <>
-            <StyledComponentsRegistry>
-                    <Header/>
-                    <Component {...pageProps} />
-                    <Footer/>
-            </StyledComponentsRegistry>
+            <Header/>
+            <Component {...pageProps} />
+            <Footer/>
         </>
     );
 }
